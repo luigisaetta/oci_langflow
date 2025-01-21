@@ -11,7 +11,7 @@ We include the essential components required to build a robust Retrieval-Augment
 2. **OCI Chat Model**    
    Powered by Meta or Cohere, this component handles conversational AI tasks for natural and engaging user interactions.
 
-3. **OCI Vector Store** 
+3. **OCI Vector Store**  
    Built on Oracle Database 23AI, this component provides a highly efficient and scalable vector store 
    for managing and querying embeddings.
 
