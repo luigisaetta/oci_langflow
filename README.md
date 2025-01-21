@@ -19,11 +19,14 @@ We include the essential components required to build a robust Retrieval-Augment
 To setup an environment with Langflow this is the recommended series of steps:
 
 1. Create and activate a "conda environment" using Python 3.11
-2. Install the tool uv in this environment, using pip
+2. Install the tool [uv](https://docs.astral.sh/uv/getting-started/) in this environment, using pip
 3. Install Langflow using uv. Follow the instructions [here](https://docs.langflow.org/get-started-installation)
 4. Install oci Python sdk and update langchain-community
+```
+pip install oci -U
+```
 
-## Setup your local environment with  OCI integration
+## Setup your local environment with OCI integration
 * Clone the github repository
 ```
 git clone https://github.com/luigisaetta/oci_langflow.git
