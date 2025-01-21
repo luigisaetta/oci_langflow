@@ -1,12 +1,19 @@
-# OCI Langflow
-This repository contains the code for the wrapper components enabling to
-**integrate OCI Generative AI and OCI 23AI Vector Store in Langflow**
+# About This Repository
+This repository provides the code for wrapper components that enable seamless integration 
+of OCI Generative AI and OCI 23c AI Vector Store into Langflow.
 
-We provide the code for the 3 basic components needed to develop a
-Retrieval Augmented Generation (RAG) solution:
-* **OCI Embeddings Model** (based on Cohere)
-* **OCI Chat Model** (Meta or Cohere)
-* **OCI Vector Store** (based on 23AI)
+## Components for Retrieval-Augmented Generation (RAG)
+We include the essential components required to build a robust Retrieval-Augmented Generation (RAG) solution:
+
+1. OCI Embeddings Model
+   Based on Cohere, this component generates embeddings for your data, enabling effective search and retrieval.
+
+2. OCI Chat Model
+   Powered by Meta or Cohere, this component handles conversational AI tasks for natural and engaging user interactions.
+
+3. OCI Vector Store
+   Built on Oracle Database 23c AI, this component provides a highly efficient and scalable vector store 
+   for managing and querying embeddings.
 
 ## Langflow Setup
 To setup an environment with Langflow this is the recommended series of steps:
