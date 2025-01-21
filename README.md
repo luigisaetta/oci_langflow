@@ -5,16 +5,13 @@ of OCI Generative AI and OCI 23c AI Vector Store into Langflow.
 ## Components for Retrieval-Augmented Generation (RAG)
 We include the essential components required to build a robust Retrieval-Augmented Generation (RAG) solution:
 
-1. OCI Embeddings Model
-   
+1. **OCI Embeddings Model**    
    Based on Cohere, this component generates embeddings for your data, enabling effective search and retrieval.
 
-2. OCI Chat Model
-   
+2. **OCI Chat Model**    
    Powered by Meta or Cohere, this component handles conversational AI tasks for natural and engaging user interactions.
 
-3. OCI Vector Store
-   
+3. **OCI Vector Store** 
    Built on Oracle Database 23AI, this component provides a highly efficient and scalable vector store 
    for managing and querying embeddings.
 
