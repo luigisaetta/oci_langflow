@@ -1,13 +1,23 @@
 """
 Wrapper for 23AI Vector Store
 """
+
 import oracledb
 from langchain_community.vectorstores.oraclevs import OracleVS
 from langchain_community.vectorstores.utils import DistanceStrategy
 
-from langflow.base.vectorstores.model import LCVectorStoreComponent, check_cached_vector_store
+from langflow.base.vectorstores.model import (
+    LCVectorStoreComponent,
+    check_cached_vector_store,
+)
 from langflow.helpers.data import docs_to_data
-from langflow.io import HandleInput, IntInput, StrInput, SecretStrInput, MessageTextInput
+from langflow.io import (
+    HandleInput,
+    IntInput,
+    StrInput,
+    SecretStrInput,
+    MessageTextInput,
+)
 from langflow.schema import Data
 
 
@@ -22,9 +32,7 @@ class OCIVectorStoreComponent(LCVectorStoreComponent):
         SecretStrInput(name="dsn", required=True),
         SecretStrInput(name="wallet_dir", required=True),
         SecretStrInput(name="wallet_pwd", required=True),
-        
         StrInput(name="collection_name", display_name="Table", required=True),
-        
         # this way we can handle the input for the search and it can be connected
         # in the flow
         MessageTextInput(
@@ -33,7 +41,9 @@ class OCIVectorStoreComponent(LCVectorStoreComponent):
             info="Enter the search query.",
         ),
         *LCVectorStoreComponent.inputs,
-        HandleInput(name="embedding", display_name="Embedding", input_types=["Embeddings"]),
+        HandleInput(
+            name="embedding", display_name="Embedding", input_types=["Embeddings"]
+        ),
         IntInput(
             name="number_of_results",
             display_name="Number of Results",
@@ -57,11 +67,11 @@ class OCIVectorStoreComponent(LCVectorStoreComponent):
             "wallet_password": self.wallet_pwd,
         }
         return CONNECT_ARGS_VECTOR
-    
+
     @check_cached_vector_store
     def build_vector_store(self) -> OracleVS:
-        CONNECT_ARGS_VECTOR = self.handle_credentials()  
-        
+        CONNECT_ARGS_VECTOR = self.handle_credentials()
+
         conn = oracledb.connect(**CONNECT_ARGS_VECTOR)
 
         v_store = OracleVS(
@@ -77,8 +87,12 @@ class OCIVectorStoreComponent(LCVectorStoreComponent):
         no changes needed here
         """
         vector_store = self.build_vector_store()
-        
-        if self.search_query and isinstance(self.search_query, str) and self.search_query.strip():
+
+        if (
+            self.search_query
+            and isinstance(self.search_query, str)
+            and self.search_query.strip()
+        ):
             docs = vector_store.similarity_search(
                 query=self.search_query,
                 k=self.number_of_results,

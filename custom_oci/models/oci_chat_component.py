@@ -1,10 +1,12 @@
 """
 Custom integration with Langflow and OCI Chat Model
 """
+
 from langflow.base.models.model import LCModelComponent
 from langflow.field_typing import LanguageModel
 from langchain_community.chat_models.oci_generative_ai import ChatOCIGenAI
 from langflow.inputs import StrInput, DropdownInput, SecretStrInput
+
 
 class OCIChatComponent(LCModelComponent):
     """
@@ -12,8 +14,9 @@ class OCIChatComponent(LCModelComponent):
 
     Notes:
         * Security: for now API_KEY, set your key-pair in $HOME/.oci
-    
+
     """
+
     display_name = "OCI Chat Model"
     description = "OCI's Generative AI Chat Model."
 
@@ -42,11 +45,17 @@ class OCIChatComponent(LCModelComponent):
             ],
             value="meta.llama-3.1-70b-instruct",
         ),
-        StrInput(name="service_endpoint", 
-                 display_name="Service Endpoint", 
-                 info="OCI Service Endpoint URL",
-                 value="https://inference.generativeai.eu-frankfurt-1.oci.oraclecloud.com"),
-        SecretStrInput(name="compartment_id", display_name="Compartment ID", info="OCI Compartment OCID"),
+        StrInput(
+            name="service_endpoint",
+            display_name="Service Endpoint",
+            info="OCI Service Endpoint URL",
+            value="https://inference.generativeai.eu-frankfurt-1.oci.oraclecloud.com",
+        ),
+        SecretStrInput(
+            name="compartment_id",
+            display_name="Compartment ID",
+            info="OCI Compartment OCID",
+        ),
         StrInput(name="test_id", display_name="test ID", info="test id"),
     ]
 

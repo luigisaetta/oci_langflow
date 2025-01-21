@@ -4,14 +4,16 @@ from langflow.base.models.model import LCModelComponent
 from langflow.io import DropdownInput, StrInput, MessageTextInput, Output
 from langflow.field_typing import Embeddings
 
+
 class OCIEmbeddingsComponent(LCModelComponent):
     """
     This class integrates the OCI Embeddings Model with Langflow.
 
     Notes:
         * Security: for now API_KEY, set your key-pair in $HOME/.oci
-    
+
     """
+
     display_name = "OCI Cohere Embeddings"
     description = "Generate Embeddings using OCI Cohere models."
 
@@ -38,9 +40,17 @@ class OCIEmbeddingsComponent(LCModelComponent):
             ],
             value="cohere.embed-english-v3.0",
         ),
-        StrInput(name="service_endpoint", display_name="Service Endpoint", info="OCI Service Endpoint URL", 
-                 required=True),
-        StrInput(name="compartment_id", display_name="Compartment ID", info="OCI Compartment OCID"),
+        StrInput(
+            name="service_endpoint",
+            display_name="Service Endpoint",
+            info="OCI Service Endpoint URL",
+            required=True,
+        ),
+        StrInput(
+            name="compartment_id",
+            display_name="Compartment ID",
+            info="OCI Compartment OCID",
+        ),
     ]
 
     outputs = [
@@ -51,7 +61,7 @@ class OCIEmbeddingsComponent(LCModelComponent):
         # default truncate strategy is END
         return OCIGenAIEmbeddings(
             auth_type=self.auth_type,
-            model_id=self.model,  
+            model_id=self.model,
             service_endpoint=self.service_endpoint,
             compartment_id=self.compartment_id,
         )
