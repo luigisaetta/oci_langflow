@@ -25,9 +25,16 @@ To setup an environment with Langflow this is the recommended series of steps:
 
 ## Setup your local environment with  OCI integration
 * Clone the github repository
-* modify the set_env.sh file so that the LANGFLOW_COMPONENTS_PATH points to your local oci_custom directory
-* execute source ./set_env.sh to set the environment variables
-* start langflow using the command: uv run langflow run
+* modify the `set_env.sh` file so that the LANGFLOW_COMPONENTS_PATH points to your local oci_custom directory
+* execute 
+```
+source ./set_env.sh
+``` 
+to set the environment variables
+* start langflow using the command: 
+```
+uv run langflow run
+```
 
 ## Notes
 Setup: do not install Langflow directly using pip. There are many components and pip really struggle to manage them correctly.
