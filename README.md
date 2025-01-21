@@ -25,6 +25,9 @@ To setup an environment with Langflow this is the recommended series of steps:
 
 ## Setup your local environment with  OCI integration
 * Clone the github repository
+```
+git clone https://github.com/luigisaetta/oci_langflow.git
+```
 * modify the `set_env.sh` file so that the LANGFLOW_COMPONENTS_PATH points to your local oci_custom directory
 * execute 
 ```
