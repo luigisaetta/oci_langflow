@@ -31,7 +31,7 @@ pip install oci -U
 ```
 git clone https://github.com/luigisaetta/oci_langflow.git
 ```
-* modify the `set_env.sh` file so that the LANGFLOW_COMPONENTS_PATH points to your local oci_custom directory
+* modify the `set_env.sh` file. Change the LANGFLOW_COMPONENTS_PATH to point your local **oci_custom** directory
 * execute 
 ```
 source ./set_env.sh
