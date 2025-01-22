@@ -19,8 +19,15 @@ In this first release (jan 2025), we include the essential components required t
 To setup an environment with Langflow this is the recommended series of steps:
 
 1. Create and activate a "conda environment" using Python 3.11
+```
+conda create -n oci_langflow python==3.11
+conda activate oci_langflow
+```
 2. Install the tool [uv](https://docs.astral.sh/uv/getting-started/) in this environment, using pip
 3. Install Langflow using uv. Follow the instructions [here](https://docs.langflow.org/get-started-installation)
+```
+uv pip install langflow
+```
 4. Install oci Python sdk and update langchain-community
 ```
 pip install oci -U
@@ -31,7 +38,7 @@ pip install oci -U
 ```
 git clone https://github.com/luigisaetta/oci_langflow.git
 ```
-* modify the `set_env.sh` file. Change the LANGFLOW_COMPONENTS_PATH to point your local **oci_custom** directory
+* modify the `set_env.sh` file. Change the env variable `LANGFLOW_COMPONENTS_PATH` to point your local **oci_custom** directory
 * execute 
 ```
 source ./set_env.sh
