@@ -1,6 +1,6 @@
 # About This Repository
 This repository provides the code for wrapper components that enable seamless integration 
-of OCI Generative AI and OCI 23c AI Vector Store into Langflow.
+of OCI Generative AI and OCI 23AI Vector Store into Langflow.
 
 ## Components for Retrieval-Augmented Generation (RAG)
 We include the essential components required to build a robust Retrieval-Augmented Generation (RAG) solution:
