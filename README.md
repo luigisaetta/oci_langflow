@@ -57,8 +57,10 @@ uv.
 ## Security
 To be able to use Models in OCI Generative AI Services you must have the proper policies in place.
 
-The code provided supports two ways to handle autorization: API_KEY and RESOURCE_PRINCIPAL.
-Follows general OCI documentation to properly handle security.
+The code provided supports two ways to handle authorization: 
+* API_KEY (default)
+* RESOURCE_PRINCIPAL.
+Follow general OCI documentation to properly handle security.
 
 
 
