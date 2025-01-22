@@ -3,7 +3,7 @@ This repository provides the code for wrapper components that enable seamless in
 of **OCI Generative** AI and **OCI 23AI** Vector Store into Langflow.
 
 ## Components for Retrieval-Augmented Generation (RAG)
-We include the essential components required to build a robust Retrieval-Augmented Generation (RAG) solution:
+In this first release (jan 2025), we include the essential components required to build a robust Retrieval-Augmented Generation (RAG) solution:
 
 1. **OCI Embeddings Model**    
    Based on Cohere, this component generates embeddings for your data, enabling effective search and retrieval.
