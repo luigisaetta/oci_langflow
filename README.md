@@ -63,6 +63,9 @@ The code provided supports two ways to handle authorization:
 * RESOURCE_PRINCIPAL.
 Follow general OCI documentation to properly handle security.
 
+## Examples
+* [Memory Chatbot](./images/langflow-memory01.png)
+
 
 
 
