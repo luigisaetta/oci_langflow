@@ -1,7 +1,14 @@
+"""
+Custom integration with Langflow and OCI Embeddings Model
+
+Author: L. Saetta (Oracle)
+
+"""
+
 from langchain_community.embeddings import OCIGenAIEmbeddings
 
 from langflow.base.models.model import LCModelComponent
-from langflow.io import DropdownInput, StrInput, MessageTextInput, Output
+from langflow.io import DropdownInput, StrInput, Output, SecretStrInput
 from langflow.field_typing import Embeddings
 
 
@@ -46,7 +53,7 @@ class OCIEmbeddingsComponent(LCModelComponent):
             info="OCI Service Endpoint URL",
             required=True,
         ),
-        StrInput(
+        SecretStrInput(
             name="compartment_id",
             display_name="Compartment ID",
             info="OCI Compartment OCID",
@@ -57,7 +64,16 @@ class OCIEmbeddingsComponent(LCModelComponent):
         Output(display_name="Embeddings", name="embeddings", method="build_embeddings"),
     ]
 
+    def build_model(self) -> Embeddings:
+        """
+        build the embeddings model
+        """
+        return self.build_embeddings()
+
     def build_embeddings(self) -> Embeddings:
+        """
+        build the embeddings model
+        """
         # default truncate strategy is END
         return OCIGenAIEmbeddings(
             auth_type=self.auth_type,

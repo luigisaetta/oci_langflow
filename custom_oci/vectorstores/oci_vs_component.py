@@ -1,5 +1,8 @@
 """
-Wrapper for 23AI Vector Store
+Custom integration with Langflow and OCI Vector Store
+
+Author: L. Saetta (Oracle)
+
 """
 
 import oracledb
@@ -22,6 +25,10 @@ from langflow.schema import Data
 
 
 class OCIVectorStoreComponent(LCVectorStoreComponent):
+    """
+    Wrapper for the OCI Vector Store
+    """
+
     display_name = "OCIVectorStore"
     description = "OCI Vector Store based on 23AI"
     name = "ocivector"
@@ -58,7 +65,7 @@ class OCIVectorStoreComponent(LCVectorStoreComponent):
         this function organizes the parameters to connect
         to DB
         """
-        CONNECT_ARGS_VECTOR = {
+        _connect_args_vector = {
             "user": self.db_user,
             "password": self.db_pwd,
             "dsn": self.dsn,
@@ -66,13 +73,13 @@ class OCIVectorStoreComponent(LCVectorStoreComponent):
             "wallet_location": self.wallet_dir,
             "wallet_password": self.wallet_pwd,
         }
-        return CONNECT_ARGS_VECTOR
+        return _connect_args_vector
 
     @check_cached_vector_store
     def build_vector_store(self) -> OracleVS:
-        CONNECT_ARGS_VECTOR = self.handle_credentials()
+        connect_args_vector = self.handle_credentials()
 
-        conn = oracledb.connect(**CONNECT_ARGS_VECTOR)
+        conn = oracledb.connect(**connect_args_vector)
 
         v_store = OracleVS(
             client=conn,

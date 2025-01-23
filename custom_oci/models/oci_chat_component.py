@@ -1,11 +1,14 @@
 """
 Custom integration with Langflow and OCI Chat Model
+
+Author: L. Saetta (Oracle)
+
 """
 
 from langflow.base.models.model import LCModelComponent
+from langflow.inputs import StrInput, DropdownInput, SecretStrInput
 from langflow.field_typing import LanguageModel
 from langchain_community.chat_models.oci_generative_ai import ChatOCIGenAI
-from langflow.inputs import StrInput, DropdownInput, SecretStrInput
 
 
 class OCIChatComponent(LCModelComponent):
@@ -56,7 +59,6 @@ class OCIChatComponent(LCModelComponent):
             display_name="Compartment ID",
             info="OCI Compartment OCID",
         ),
-        StrInput(name="test_id", display_name="test ID", info="test id"),
     ]
 
     def build_model(self) -> LanguageModel:
