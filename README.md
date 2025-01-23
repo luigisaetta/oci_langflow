@@ -55,6 +55,12 @@ As a result the installation is really slow.
 The preferred way to do (as suggested also in the official documentation) is to use
 uv.
 
+### The **Philosophy**
+The main idea is to provide the code as an easy way that can be used from customers. Then, if they want, they can add all the details they really need.
+Therefore, for example, wrappers expose only the mandatory parameters that needs to be customized. For the remaining:
+1. I have followed Langchain defaults.
+2. The code is simple and easy to be customized.
+
 ## Security
 To be able to use Models in OCI Generative AI Services you must have the proper policies in place.
 
