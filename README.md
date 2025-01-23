@@ -9,7 +9,7 @@ In this first release (jan 2025), we include the essential components required t
    Based on Cohere, this component generates embeddings for your data, enabling effective search and retrieval.
 
 2. **OCI Chat Model**    
-   Powered by Meta or Cohere, this component handles conversational AI tasks for natural and engaging user interactions.
+   Powered by Meta or Cohere models, this component handles conversational AI tasks for natural and engaging user interactions.
 
 3. **OCI Vector Store**  
    Built on Oracle Database 23AI, this component provides a highly efficient and scalable vector store 
