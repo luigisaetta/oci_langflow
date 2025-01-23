@@ -64,6 +64,12 @@ The code provided supports two ways to handle authorization:
 Follow general OCI documentation to properly handle security.
 
 ## Examples
+There is a simple way to start working with Langflow and our OCI integration: take one of the example flow 
+and modify it plugging OCI Embeddings, OCI Chat Model and OCI Vector Store.
+
+It is really easy and you need to chhose or specify only few parameters (COMPARTMENT_OCID, ..).
+
+Here the links to two examples with screenshots:
 * [Memory Chatbot](./images/langflow-memory01.png)
 * [RAG with 23AI](./images/langflow-rag01.png)
 
