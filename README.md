@@ -39,19 +39,20 @@ pip install oci -U
 git clone https://github.com/luigisaetta/oci_langflow.git
 ```
 * modify the `set_env.sh` file. Change the env variable `LANGFLOW_COMPONENTS_PATH` to point your local **oci_custom** directory
-* execute 
+* execute the following command to set the environment variables:
 ```
 source ./set_env.sh
 ``` 
-to set the environment variables
 * start langflow using the command: 
 ```
 uv run langflow run
 ```
 
 ## Notes
-Setup: do not install Langflow directly using pip. There are many components and pip really struggle to manage them correctly.
-As a result the installation is really slow. The preferred way to do (as suggested also in the official documentation) is to use
+### Setup: do not install Langflow using directly pip, use uv. 
+There are many components and pip really struggle to manage them correctly.
+As a result the installation is really slow. 
+The preferred way to do (as suggested also in the official documentation) is to use
 uv.
 
 ## Security
