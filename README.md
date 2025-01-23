@@ -65,6 +65,7 @@ Follow general OCI documentation to properly handle security.
 
 ## Examples
 * [Memory Chatbot](./images/langflow-memory01.png)
+* [RAG with 23AI](./images/langflow-rag01.png)
 
 
 
