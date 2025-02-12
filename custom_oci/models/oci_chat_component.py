@@ -3,6 +3,10 @@ Custom integration with Langflow and OCI Chat Model
 
 Author: L. Saetta (Oracle)
 
+This is part of demo code, in a real project you need to customise to fit your needs:
+* temperature
+* max_tokens
+* models list
 """
 
 from langflow.base.models.model import LCModelComponent
@@ -42,7 +46,7 @@ class OCIChatComponent(LCModelComponent):
             info="The model_id to use for the chat model",
             advanced=True,
             options=[
-                "meta.llama-3.1-70b-instruct",
+                "meta.llama-3.3-70b-instruct",
                 "cohere.command-r-plus-08-2024",
                 "meta.llama-3.1-405b-instruct",
             ],
@@ -67,6 +71,7 @@ class OCIChatComponent(LCModelComponent):
             model_id=self.model_id,
             service_endpoint=self.service_endpoint,
             compartment_id=self.compartment_id,
+            model_kwargs={"temperature": 0.1, "max_tokens": 1024},
         )
 
         return chat_model

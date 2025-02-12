@@ -11,7 +11,6 @@ from langflow.base.models.model import LCModelComponent
 from langflow.io import DropdownInput, StrInput, Output, SecretStrInput
 from langflow.field_typing import Embeddings
 
-
 class OCIEmbeddingsComponent(LCModelComponent):
     """
     This class integrates the OCI Embeddings Model with Langflow.
